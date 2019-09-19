@@ -12,8 +12,8 @@ source:
     - remove_setuptools_scm.patch
 
 build:
-  number: 0
-  skip: True  # [win or py != 36]
+  number: 1
+  skip: True  # [win]
 
 requirements:
   build:
