@@ -17,15 +17,15 @@ build:
 
 requirements:
   build:
-    - cmake >=3.2
+    - cmake
     - make
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
     - python
     - pip
-    - fftw >=3.1
-    - gsl >=2.1
+    - fftw
+    - gsl
     - numpy
     - swig
     - libcblas
@@ -34,7 +34,7 @@ requirements:
     - python
     - pycamb
     - pyyaml
-    - fftw >=3.1  # apparently FFTW doesn't have a run export
+    - fftw  # apparently FFTW doesn't have a run export
     - {{ pin_compatible('numpy') }}
     - llvm-openmp  # [osx]
 
