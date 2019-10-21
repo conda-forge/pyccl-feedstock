@@ -1,5 +1,5 @@
 {% set name = "pyccl" %}
-{% set version = "2.0.0rc3" %}
+{% set version = "2.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://github.com/LSSTDESC/CCL/archive/v{{ version }}.tar.gz
-  sha256: d1e15826b2b58b32c9e3531c2818caaf67fd7810f2ebde45b4fcd1594c4e1221
+  sha256: 3be59ac62cf377b16ae17122fc259f697eb87821797f7f5e4aab54de980b31ee
   patches:
     - remove_setuptools_scm.patch
 
 build:
-  number: 2
+  number: 0
   skip: True  # [win]
 
 requirements:
