@@ -1,18 +1,16 @@
 {% set name = "pyccl" %}
-{% set version = "2.0.0rc3" %}
+{% set version = "2.0.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/LSSTDESC/CCL/archive/v{{ version }}.tar.gz
-  sha256: d1e15826b2b58b32c9e3531c2818caaf67fd7810f2ebde45b4fcd1594c4e1221
-  patches:
-    - remove_setuptools_scm.patch
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: be8bb0f2bd1e56382371f06e7926f1821dc8d6250bbac37c5d0fdc4b6c421bb1
 
 build:
-  number: 2
+  number: 0
   skip: True  # [win]
 
 requirements:
@@ -24,6 +22,7 @@ requirements:
   host:
     - python
     - pip
+    - setuptools_scm
     - fftw
     - gsl
     - numpy
