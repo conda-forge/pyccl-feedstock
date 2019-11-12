@@ -12,6 +12,8 @@ cxx_compiler_version:
 - '7'
 docker_image:
 - condaforge/linux-anvil-comp7
+fftw:
+- '3'
 gsl:
 - '2.5'
 libcblas:
@@ -19,6 +21,8 @@ libcblas:
 numpy:
 - '1.14'
 pin_run_as_build:
+  fftw:
+    max_pin: x
   python:
     min_pin: x.x
     max_pin: x.x
