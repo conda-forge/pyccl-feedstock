@@ -12,7 +12,7 @@ source:
     - remove_setuptools_build.patch
 
 build:
-  number: 0
+  number: 1
   skip: True  # [win]
 
 requirements:
@@ -33,7 +33,7 @@ requirements:
     - llvm-openmp  # [osx]
   run:
     - python
-    - pycamb
+    - pycamb >=1
     - pyyaml
     - fftw  # apparently FFTW doesn't have a run export
     - {{ pin_compatible('numpy') }}
