@@ -33,7 +33,7 @@ requirements:
     - llvm-openmp  # [osx]
   run:
     - python
-    - pycamb >=1
+    - camb >=1
     - pyyaml
     - fftw  # apparently FFTW doesn't have a run export
     - {{ pin_compatible('numpy') }}
