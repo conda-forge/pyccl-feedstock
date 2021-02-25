@@ -1,5 +1,5 @@
 {% set name = "pyccl" %}
-{% set version = "2.1.0" %}
+{% set version = "2.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 9e09185f1f19ea54c4e52627c76c34cb8c005d0b32fb89623104843fc4516264
+  sha256: 9da527e6bebd6241190c8988054fb23eeed9874aef14bbdc5abe2076086ed19c
   patches:
     - remove_setuptools_build.patch
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win]
 
 requirements:
@@ -38,6 +38,9 @@ requirements:
     - fftw  # apparently FFTW doesn't have a run export
     - {{ pin_compatible('numpy') }}
     - llvm-openmp  # [osx]
+    - matplotlib-base
+    - scipy
+    - fast-pt
 
 test:
   imports:
