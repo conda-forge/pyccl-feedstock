@@ -38,6 +38,9 @@ requirements:
     - fftw  # apparently FFTW doesn't have a run export
     - {{ pin_compatible('numpy') }}
     - llvm-openmp  # [osx]
+    - matplotlib-base
+    - scipy
+    - fast-pt
 
 test:
   imports:
