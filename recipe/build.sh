@@ -4,7 +4,7 @@ pyver=${pyver//Python /}
 
 mkdir -p build
 
-cmake \
+cmake ${CMAKE_ARGS} \
     -H. \
     -Bbuild \
     -DPYTHON_VERSION=${pyver} \
