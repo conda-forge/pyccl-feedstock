@@ -17,3 +17,5 @@ make VERBOSE=1 _ccllib
 popd
 
 ${PYTHON} -m pip install . -vv
+
+rm -f ${PREFIX}/bin/swig
