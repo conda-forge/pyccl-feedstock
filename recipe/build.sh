@@ -1,4 +1,7 @@
 
+export SWIG_DIR=${BUILD_PREFIX}
+export SWIG_EXECUTABLE=${SWIG_DIR}/swig
+
 pyver=$($PYTHON --version)
 pyver=${pyver//Python /}
 
