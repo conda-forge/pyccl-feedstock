@@ -1,3 +1,5 @@
+ln -s ${PREFIX}/bin/swig ${BUILD_PREFIX}/bin/swig
+
 pyver=$($PYTHON --version)
 pyver=${pyver//Python /}
 
