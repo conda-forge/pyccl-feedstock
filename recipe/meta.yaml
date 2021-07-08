@@ -29,6 +29,7 @@ requirements:
     - libgomp      # [linux]
     - autoconf
     - automake
+    - swig
   host:
     - python
     - pip
