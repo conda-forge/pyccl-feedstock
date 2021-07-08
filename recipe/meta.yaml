@@ -26,7 +26,9 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - llvm-openmp  # [osx]
-    - libgomp      # [linux]    
+    - libgomp      # [linux]
+    - autoconf
+    - automake
   host:
     - python
     - pip
