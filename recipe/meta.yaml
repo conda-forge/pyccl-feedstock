@@ -12,7 +12,7 @@ source:
     - remove_setuptools_build.patch
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
 
 requirements:
@@ -24,6 +24,8 @@ requirements:
     - make
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - llvm-openmp  # [osx]
+    - libgomp      # [linux]    
   host:
     - python
     - pip
@@ -33,14 +35,12 @@ requirements:
     - numpy
     - swig
     - libcblas
-    - llvm-openmp  # [osx]
   run:
     - python
     - camb >=1
     - pyyaml
     - fftw  # apparently FFTW doesn't have a run export
     - {{ pin_compatible('numpy') }}
-    - llvm-openmp  # [osx]
     - matplotlib-base
     - scipy
     - fast-pt
