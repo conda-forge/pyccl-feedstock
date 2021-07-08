@@ -1,10 +1,11 @@
+ln -s ${BUILD_PREFIX}/bin/swig ${PREFIX}/bin/swig
 
 pyver=$($PYTHON --version)
 pyver=${pyver//Python /}
 
 mkdir -p build
 
-cmake \
+cmake ${CMAKE_ARGS} \
     -H. \
     -Bbuild \
     -DPYTHON_VERSION=${pyver} \
@@ -16,3 +17,5 @@ make VERBOSE=1 _ccllib
 popd
 
 ${PYTHON} -m pip install . -vv
+
+rm -f ${PREFIX}/bin/swig
