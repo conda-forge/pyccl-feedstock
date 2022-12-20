@@ -1,5 +1,5 @@
 {% set name = "pyccl" %}
-{% set version = "2.5.1" %}
+{% set version = "2.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 36c2cdbbf4086cc196f7ee7d6e4bab7e190033ce9af409238cfc119ddafbd49a
+  sha256: 62134c5f7350627a0ebab43f526678372be0d0bf04f9865054ca19b815a058ab
   patches:
     - remove_setuptools_build.patch
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win]
 
 requirements:
