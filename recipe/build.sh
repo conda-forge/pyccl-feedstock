@@ -9,7 +9,6 @@ cmake ${CMAKE_ARGS} \
     -H. \
     -Bbuild \
     -DPYTHON_VERSION=${pyver} \
-    -DFORCE_OPENMP=YES \
     -DCMAKE_VERBOSE_MAKEFILE=ON
 
 pushd build
