@@ -35,7 +35,7 @@ requirements:
     - gsl
     - numpy
     - libcblas
-    - llvm-openmp ={{ c_compiler_version }}  # [osx]
+    - llvm-openmp =14  # [osx]
   run:
     - python
     - camb >=1
