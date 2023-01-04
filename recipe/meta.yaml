@@ -24,7 +24,7 @@ requirements:
     - make
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - llvm-openmp  # [osx and not arm64]
+    - llvm-openmp  # [osx and target_platform != 'osx-arm64']
     - libgomp      # [linux]
     - swig
   host:
