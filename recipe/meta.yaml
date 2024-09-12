@@ -12,7 +12,7 @@ source:
     - remove_setuptools_build.patch
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
 
 requirements:
@@ -23,6 +23,7 @@ requirements:
     - cmake <3.24
     - make
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
     - llvm-openmp  # [osx]
     - libgomp      # [linux]
