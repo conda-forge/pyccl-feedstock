@@ -36,6 +36,7 @@ requirements:
     - gsl
     - numpy
     - libcblas
+    - setuptools
   run:
     - python
     - camb >=1
