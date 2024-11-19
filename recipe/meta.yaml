@@ -1,5 +1,5 @@
 {% set name = "pyccl" %}
-{% set version = "3.0.2" %}
+{% set version = "3.1.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 5ca8979f91c23bc4e90856ca4b6328d210a022a3039e422349089e53d95e3d92
+  sha256: a4115d5c82a946bba6db432920dc9de74bfd43ec8e5151666280185b2402ef68
   patches:
     - remove_setuptools_build.patch
 
@@ -23,6 +23,7 @@ requirements:
     - cmake <3.24
     - make
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
     - llvm-openmp  # [osx]
     - libgomp      # [linux]
