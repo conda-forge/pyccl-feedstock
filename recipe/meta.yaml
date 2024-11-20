@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: a4115d5c82a946bba6db432920dc9de74bfd43ec8e5151666280185b2402ef68
   patches:
     - remove_setuptools_build.patch
@@ -31,6 +31,7 @@ requirements:
   host:
     - python
     - pip
+    - setuptools
     - setuptools_scm
     - fftw
     - gsl
