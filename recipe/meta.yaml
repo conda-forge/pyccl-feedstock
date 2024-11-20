@@ -12,7 +12,7 @@ source:
     - remove_setuptools_build.patch
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
 
 requirements:
@@ -42,7 +42,6 @@ requirements:
     - camb >=1
     - pyyaml
     - fftw  # apparently FFTW doesn't have a run export
-    - {{ pin_compatible('numpy') }}
     - matplotlib-base
     - scipy
     - fast-pt
