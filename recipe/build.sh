@@ -1,5 +1,7 @@
 ln -s ${BUILD_PREFIX}/bin/swig ${PREFIX}/bin/swig
 
+export CFLAGS="${CFLAGS} -Wno-int-conversion"
+
 pyver=$($PYTHON --version)
 pyver=${pyver//Python /}
 pyver=$(echo ${pyver} | cut -d "r" -f 1)
