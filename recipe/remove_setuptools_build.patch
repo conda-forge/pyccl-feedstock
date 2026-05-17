@@ -1,13 +1,28 @@
+From 1963930e74773d6426915c55a21a8edf9d712f79 Mon Sep 17 00:00:00 2001
+From: "Matthew R. Becker" <beckermr@users.noreply.github.com>
+Date: Sun, 17 May 2026 08:06:58 -0500
+Subject: [PATCH] [WIP] fix: patch for conda-forge build
+
+Comment out CMake build steps for debugging purposes.
+---
+ setup.py | 32 ++++++++++++++++----------------
+ 1 file changed, 16 insertions(+), 16 deletions(-)
+
+diff --git a/setup.py b/setup.py
+index a424e4240..1e4d26d97 100644
 --- a/setup.py
 +++ b/setup.py
-@@ -12,19 +12,6 @@
- 
- 
+@@ -12,22 +12,22 @@
  def _compile_ccl(debug=False):
--    call(["mkdir", "-p", "build"])
+     # Clean stale CMake cache to avoid cross-version contamination
+     # (e.g. when cibuildwheel builds multiple Python versions sequentially).
+-    if os.path.exists("build/CMakeCache.txt"):
+-        shutil.rmtree("build")
+-    os.makedirs("build", exist_ok=True)
 -    v = sys.version_info
 -    cmd = ["cmake", "-H.", "-Bbuild",
--           "-DPYTHON_VERSION=%d.%d.%d" % (v.major, v.minor, v.micro)]
+-           "-DPYTHON_VERSION=%d.%d.%d" % (v.major, v.minor, v.micro),
+-           "-DPYTHON_EXECUTABLE=%s" % sys.executable]
 -    if debug:
 -        cmd += ["-DCMAKE_BUILD_TYPE=Debug"]
 -    if call(cmd) != 0:
@@ -17,6 +32,22 @@
 -
 -    if call(["make", "-Cbuild", "_ccllib"]) != 0:
 -        raise Exception("Could not build CCL")
++    # if os.path.exists("build/CMakeCache.txt"):
++    #     shutil.rmtree("build")
++    # os.makedirs("build", exist_ok=True)
++    # v = sys.version_info
++    # cmd = ["cmake", "-H.", "-Bbuild",
++    #        "-DPYTHON_VERSION=%d.%d.%d" % (v.major, v.minor, v.micro),
++    #        "-DPYTHON_EXECUTABLE=%s" % sys.executable]
++    # if debug:
++    #     cmd += ["-DCMAKE_BUILD_TYPE=Debug"]
++    # if call(cmd) != 0:
++    #     raise Exception(
++    #         "Could not run CMake configuration. Make sure "
++    #         "CMake is installed !")
++
++    # if call(["make", "-Cbuild", "_ccllib"]) != 0:
++    #     raise Exception("Could not build CCL")
  
      # Finds the library under its different possible names
      if os.path.exists("build/pyccl/_ccllib.so"):
