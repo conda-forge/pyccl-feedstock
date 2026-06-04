@@ -38,6 +38,7 @@ requirements:
     - numpy
     - libcblas
     - llvm-openmp  # [osx]
+    - libgomp      # [linux]
   run:
     - python
     - camb >=1
