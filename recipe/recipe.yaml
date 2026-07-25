@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: pyccl
-  version: "3.3.4"
+  version: "3.3.5"
 
 package:
   name: ${{ name|lower }}
@@ -10,22 +10,21 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
-  sha256: a9d22557354fd161df909e8f4f199e4f1c434c080fd6cddb2246609ddbd70e7c
+  sha256: a26711e3b476f8ea1129be1c79eff0f3dbc98db105652fd47eb5a43162119b13
   patches:
     - remove_setuptools_build.patch
 
 build:
-  number: 1
+  number: 0
   skip: win
 
 requirements:
   build:
     - if: build_platform != target_platform
-      then: python
-    - if: build_platform != target_platform
-      then: cross-python_${{ target_platform }}
-    - if: build_platform != target_platform
-      then: numpy
+      then:
+        - python
+        - cross-python_${{ target_platform }}
+        - numpy
     - cmake
     - make
     - ${{ compiler('c') }}
