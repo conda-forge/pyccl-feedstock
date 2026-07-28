@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: pyccl
-  version: "3.3.5"
+  version: "3.3.6"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
-  sha256: a26711e3b476f8ea1129be1c79eff0f3dbc98db105652fd47eb5a43162119b13
+  sha256: fd6c0181381eb57345ec9b56bdcf9300c9a31a42014aa9c8ced95f31ace16795
   patches:
     - remove_setuptools_build.patch
 
