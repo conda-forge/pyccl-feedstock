@@ -19,7 +19,7 @@ docker_image:
 fftw:
 - '3'
 gsl:
-- '2.7'
+- '2.8'
 libcblas:
 - 3.9.* *netlib
 numpy:
